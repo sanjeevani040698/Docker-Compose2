@@ -2,7 +2,7 @@ version: '2'
 services:
   web1:
    #build: ./Docker_main
-   image: image_name
+   image: image_main
    ports:
     - 5000:8080
    #volumes: 
@@ -11,7 +11,7 @@ services:
     - ./Docker_main:/usr/local/tomcat/folder 
   web2:
     #build: ./Docker_result
-    image: image_name
+    image: image_result
     ports:
      - "5001:80"
     depends_on:
