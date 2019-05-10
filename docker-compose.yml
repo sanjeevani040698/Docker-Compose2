@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web1:
+   #build: ./Docker_main
+   image: ait
+   ports:
+    - 5000:8080
+   #volumes: 
+   # - /home/priya/Priya/Docker_compose/Docker_main/public_html:/usr/local/tomcat/webapps/webapp
+   volumes:
+    - ./Docker_main:/usr/local/tomcat/folder 
+  web2:
+    #build: ./Docker_result
+    image: ait2
+    ports:
+     - "5001:80"
+    depends_on:
+     - web1
