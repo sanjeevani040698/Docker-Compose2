@@ -1,5 +1,5 @@
 # Docker Compose UseCase
-This is another example of docker-compose in which we link self made images together.
+This is another example of docker-compose in which we link self made services together.
 
 The yaml file looks something like this:
 
