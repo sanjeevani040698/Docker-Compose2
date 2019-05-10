@@ -4,9 +4,12 @@ This is another example of docker-compose in which we link self made services to
 The yaml file looks something like this:
 
 version: '2'                                                                                                                            
+
 services:                                                                                                                           
-  web1:                                                                                                               
-   #build: ./Docker_main            # microservice is in the folder Docker_main of the current directory                                                                                                             
+ 
+ 
+ web1:                                                                                                               
+   #build: ./Docker_main ______________ # microservice is in the folder Docker_main of the current directory                                                                                                             
    image: image_main                                                                                                                    
    ports:                                                                                                                 
     - 5000:8080                                                                                                         
@@ -14,8 +17,10 @@ services:
     #- ./web_files:/usr/local/tomcat/webapps/webapp                                      
    volumes:                                                                                                                 
     - ./Docker_main:/usr/local/tomcat/folder                                                                                      
-  web2:                                                                                                                             
-    #build: ./Docker_result         # other dependent microservice is in the folder Docker_result of the current directory                                                             
+ 
+ 
+ web2:                                                                                                                             
+    #build: ./Docker_result____________ # other dependent microservice is in the folder Docker_result of the current directory                                                             
     image: image_result                                                                                                     
     ports:                                                                                                                    
      - "5001:80"                                                                                                                                    
@@ -25,7 +30,7 @@ services:
 The two services described here, web1 and web2, can be considered as two microservices of a whole application that need to linked together.
 
 We can build these services in the yaml file (by using build: ./folder) or put the image (as image: image_name) here.               
-We can also build a particular service before running the dompose file by command: docker-compose build web1
+We can also build a particular service before running the docker-compose file by command: docker-compose build web1
 
 Then we specify the mapping of host machine and container.
 
